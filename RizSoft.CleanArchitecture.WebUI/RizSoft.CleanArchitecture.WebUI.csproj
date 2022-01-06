@@ -6,4 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Application\RizSoft.CleanArchitecture.Application.csproj" />
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Domain\RizSoft.CleanArchitecture.Domain.csproj" />
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Repository.SQLite.EfCore\RizSoft.CleanArchitecture.Repository.SQLite.EfCore.csproj" />
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Services\RizSoft.CleanArchitecture.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="northwind.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

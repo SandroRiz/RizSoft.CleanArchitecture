@@ -1,13 +1,20 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using RizSoft.CleanArchitecture.BlazorServer.Data;
+using Microsoft.EntityFrameworkCore;
+using RizSoft.CleanArchitecture.Application;
+using RizSoft.CleanArchitecture.Repository.SqlServer.EfCore;
+using RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory;
+using RizSoft.CleanArchitecture.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+
+var connectionString = builder.Configuration.GetConnectionString("Db");
+builder.Services.AddDbContextFactory<NorthwindDbContext>(o => o.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 var app = builder.Build();
 

@@ -11,7 +11,7 @@ public class EmployeeRepository : BaseRepository<Employee, int>, IEmployeeReposi
     {
     }
 
-    public async Task<IEnumerable<Employee>> ListByCountryAsync(string country)
+    public async Task<List<Employee>> ListByCountryAsync(string country)
     {
         using (var ctx = CtxFactory.CreateDbContext())
         {
@@ -19,4 +19,6 @@ public class EmployeeRepository : BaseRepository<Employee, int>, IEmployeeReposi
         }
         
     }
+
+   
 }

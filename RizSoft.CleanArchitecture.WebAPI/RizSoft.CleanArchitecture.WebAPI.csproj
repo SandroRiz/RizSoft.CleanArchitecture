@@ -10,4 +10,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Application\RizSoft.CleanArchitecture.Application.csproj" />
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Domain\RizSoft.CleanArchitecture.Domain.csproj" />
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.csproj" />
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Services\RizSoft.CleanArchitecture.Services.csproj" />
+  </ItemGroup>
+
 </Project>

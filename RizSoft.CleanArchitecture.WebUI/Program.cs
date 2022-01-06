@@ -1,7 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using RizSoft.CleanArchitecture.Application;
+using RizSoft.CleanArchitecture.Repository.SQLite.EfCore;
+using RizSoft.CleanArchitecture.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+var connectionString = builder.Configuration.GetConnectionString("Db");
+builder.Services.AddDbContext<NorthwindDbContext>(o => o.UseSqlite(connectionString));
+
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 var app = builder.Build();
 

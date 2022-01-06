@@ -2,7 +2,7 @@
 using RizSoft.CleanArchitecture.Application;
 using RizSoft.CleanArchitecture.Domain.Models;
 
-namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore;
+namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore;
 
 
 public class EmployeeRepository : BaseRepository<Employee, int>, IEmployeeRepository

@@ -26,7 +26,7 @@ public class EmployeeService : BaseService<Employee, int>, IEmployeeService
     }
 
     //sample of mapping a repository method
-    public async Task<IEnumerable<Employee>> ListByCountryAsync(string country)
+    public async Task<List<Employee>> ListByCountryAsync(string country)
     {
         return await _repository.ListByCountryAsync(country);   
     }
