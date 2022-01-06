@@ -12,6 +12,8 @@ Change of repository is made only changing the dependency in program.cs
 - WebUI uses a Sqlite db
 - WebAPI uses a SqlServer Ef Core Db Context
 - Blazor Server uses a  SqlServer Ef Core DbContextFactory (to avoid concurrency issues)
-- Blazor WASP uses directly the API
+- Blazor WASM uses directly the API
+- Console App uses directly the implementations like in the old days... :-)
 
 See picture below
+![Alt text](Ausil/CleanArchitecture.jpg?raw=true "My Clean Architecture Schema")
