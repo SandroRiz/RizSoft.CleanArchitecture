@@ -7,7 +7,7 @@ namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore;
 
 public class EmployeeRepository : BaseRepository<Employee, int>, IEmployeeRepository
 {
-    public EmployeeRepository(NorthwindDbContext context) : base(context)
+    public EmployeeRepository(DataContext context) : base(context)
     {
     }
 

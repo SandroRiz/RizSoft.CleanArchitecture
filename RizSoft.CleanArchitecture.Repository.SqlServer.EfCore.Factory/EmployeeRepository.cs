@@ -7,7 +7,7 @@ namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory;
 // derive from BaseRepository for Blazor Server Side to avoid concurrency issues;
 public class EmployeeRepository : BaseRepository<Employee, int>, IEmployeeRepository
 {
-    public EmployeeRepository(IDbContextFactory<NorthwindDbContext> factory) : base(factory)
+    public EmployeeRepository(IDbContextFactory<DataContext> factory) : base(factory)
     {
     }
 

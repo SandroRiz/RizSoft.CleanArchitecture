@@ -6,19 +6,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using RizSoft.CleanArchitecture.Domain.Models;
 
-namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore
+namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore
 {
-    public partial class NorthwindDbContext : DbContext
+    public partial class DataContext : DbContext
     {
-        public NorthwindDbContext()
+        public DataContext()
         {
         }
 
-        public NorthwindDbContext(DbContextOptions contextOptions)
-        : base(contextOptions)
-        {
-        }
-        public NorthwindDbContext(DbContextOptions<NorthwindDbContext> options)
+        public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
         }
@@ -89,13 +85,28 @@ namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore
 
                 entity.Property(e => e.Region).HasMaxLength(15);
 
-               
+                entity.HasMany(d => d.CustomerTypes)
+                    .WithMany(p => p.Customers)
+                    .UsingEntity<Dictionary<string, object>>(
+                        "CustomerCustomerDemo",
+                        l => l.HasOne<CustomerDemographic>().WithMany().HasForeignKey("CustomerTypeId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_CustomerCustomerDemo"),
+                        r => r.HasOne<Customer>().WithMany().HasForeignKey("CustomerId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_CustomerCustomerDemo_Customers"),
+                        j =>
+                        {
+                            j.HasKey("CustomerId", "CustomerTypeId").IsClustered(false);
+
+                            j.ToTable("CustomerCustomerDemo");
+
+                            j.IndexerProperty<string>("CustomerId").HasMaxLength(5).HasColumnName("CustomerID").IsFixedLength();
+
+                            j.IndexerProperty<string>("CustomerTypeId").HasMaxLength(10).HasColumnName("CustomerTypeID").IsFixedLength();
+                        });
             });
 
             modelBuilder.Entity<CustomerDemographic>(entity =>
             {
                 entity.HasKey(e => e.CustomerTypeId)
-                    ;
+                    .IsClustered(false);
 
                 entity.Property(e => e.CustomerTypeId)
                     .HasMaxLength(10)
@@ -162,7 +173,7 @@ namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore
                         r => r.HasOne<Employee>().WithMany().HasForeignKey("EmployeeId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_EmployeeTerritories_Employees"),
                         j =>
                         {
-                            j.HasKey("EmployeeId", "TerritoryId");
+                            j.HasKey("EmployeeId", "TerritoryId").IsClustered(false);
 
                             j.ToTable("EmployeeTerritories");
 
@@ -321,7 +332,7 @@ namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore
             modelBuilder.Entity<Region>(entity =>
             {
                 entity.HasKey(e => e.RegionId)
-                    ;
+                    .IsClustered(false);
 
                 entity.ToTable("Region");
 
@@ -382,7 +393,7 @@ namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore
             modelBuilder.Entity<Territory>(entity =>
             {
                 entity.HasKey(e => e.TerritoryId)
-                    ;
+                    .IsClustered(false);
 
                 entity.Property(e => e.TerritoryId)
                     .HasMaxLength(20)

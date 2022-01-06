@@ -11,9 +11,9 @@ var builder = new ConfigurationBuilder()
 var config = builder.Build();
 var connectionString = config["ConnectionStrings:Db"];
 
-var options = SqlServerDbContextOptionsExtensions.UseSqlServer(new DbContextOptionsBuilder(), connectionString).Options;
+var options = SqlServerDbContextOptionsExtensions.UseSqlServer(new DbContextOptionsBuilder<DataContext>(), connectionString).Options;
 
-EmployeeRepository repository = new EmployeeRepository(new NorthwindDbContext(options));
+EmployeeRepository repository = new(new DataContext(options));
 EmployeeService svc = new EmployeeService(repository);
 
 var employees = await svc.ListByCountryAsync("UK");

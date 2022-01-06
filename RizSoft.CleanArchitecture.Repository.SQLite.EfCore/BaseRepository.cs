@@ -7,9 +7,9 @@ public class BaseRepository<T, Tkey> : IBaseRepository<T, Tkey>
 where T : class
 {
 
-    protected NorthwindDbContext Context { get; }
+    protected DataContext Context { get; }
 
-    public BaseRepository(NorthwindDbContext context)
+    public BaseRepository(DataContext context)
     {
         this.Context = context;
     }

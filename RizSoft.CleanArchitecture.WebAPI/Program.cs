@@ -23,7 +23,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("Db");
-builder.Services.AddDbContext<NorthwindDbContext>(o => o.UseSqlServer(connectionString));
+builder.Services.AddDbContext<DataContext>(o => o.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();

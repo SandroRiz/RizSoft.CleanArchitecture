@@ -6,10 +6,10 @@ namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory;
 public class BaseRepository<T, Tkey> : IBaseRepository<T, Tkey>
 where T : class
 {
-    protected IDbContextFactory<NorthwindDbContext> CtxFactory { get; }
+    protected IDbContextFactory<DataContext> CtxFactory { get; }
 
 
-    public BaseRepository(IDbContextFactory<NorthwindDbContext> ctxFactory)
+    public BaseRepository(IDbContextFactory<DataContext> ctxFactory)
     {
         this.CtxFactory = ctxFactory;
     }

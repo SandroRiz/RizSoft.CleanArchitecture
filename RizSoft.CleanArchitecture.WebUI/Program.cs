@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 var connectionString = builder.Configuration.GetConnectionString("Db");
-builder.Services.AddDbContext<NorthwindDbContext>(o => o.UseSqlite(connectionString));
+builder.Services.AddDbContext<DataContext>(o => o.UseSqlite(connectionString));
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();

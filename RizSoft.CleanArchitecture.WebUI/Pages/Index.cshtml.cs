@@ -21,6 +21,11 @@ namespace RizSoft.CleanArchitecture.WebUI.Pages
 
         public async Task<IActionResult> OnGetAsync()
         {
+            if (_logger.IsEnabled(LogLevel.Information))
+            {
+                _logger.LogInformation("Get Employees of UK");
+            }
+                
             Employees = await _employeeService.ListByCountryAsync("UK");
             return Page();
         }
