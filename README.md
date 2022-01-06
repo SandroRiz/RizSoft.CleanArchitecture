@@ -15,3 +15,4 @@ Change of repository is made only changing the dependency in program.cs
 - Blazor WASP uses directly the API
 
 See picture below
+![Alt text](/ausil/cleanarchitecture.jpg?raw=true "My Clean Architecture Schema")
