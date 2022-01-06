@@ -13,7 +13,10 @@ namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore
         public NorthwindDbContext()
         {
         }
-
+        public NorthwindDbContext(DbContextOptions contextOptions)
+        : base(contextOptions)
+        {
+        }
         public NorthwindDbContext(DbContextOptions<NorthwindDbContext> options)
             : base(options)
         {

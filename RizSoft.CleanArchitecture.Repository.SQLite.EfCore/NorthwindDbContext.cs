@@ -14,6 +14,10 @@ namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore
         {
         }
 
+        public NorthwindDbContext(DbContextOptions contextOptions)
+        : base(contextOptions)
+        {
+        }
         public NorthwindDbContext(DbContextOptions<NorthwindDbContext> options)
             : base(options)
         {

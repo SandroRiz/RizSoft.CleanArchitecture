@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory", "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory.csproj", "{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C2AA3D01-8E97-4F59-8BD6-A4D3F6B039E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.ConsoleApp", "RizSoft.CleanArchitecture.ConsoleApp\RizSoft.CleanArchitecture.ConsoleApp.csproj", "{A50F0779-96E7-4783-9E56-677B342F6977}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +87,10 @@ Global
 		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A50F0779-96E7-4783-9E56-677B342F6977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50F0779-96E7-4783-9E56-677B342F6977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50F0779-96E7-4783-9E56-677B342F6977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50F0779-96E7-4783-9E56-677B342F6977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +107,7 @@ Global
 		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
 		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
 		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
+		{A50F0779-96E7-4783-9E56-677B342F6977} = {C2AA3D01-8E97-4F59-8BD6-A4D3F6B039E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05409619-CB6C-4221-8AC8-E3E9F371F765}
