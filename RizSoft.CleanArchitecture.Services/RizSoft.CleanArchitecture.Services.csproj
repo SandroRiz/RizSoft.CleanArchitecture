@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Application\RizSoft.CleanArchitecture.Application.csproj" />
+  </ItemGroup>
+
 </Project>

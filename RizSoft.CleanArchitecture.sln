@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Repository.SQLite.EfCore", "RizSoft.CleanArchitecture.Repository.SQLite.EfCore\RizSoft.CleanArchitecture.Repository.SQLite.EfCore.csproj", "{C05F1789-B657-4EA0-A1A9-8581C9D0E93C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Repository.SqlServer.EfCoreFactory", "RizSoft.CleanArchitecture.Repository.SqlServer.EfCoreFactory\RizSoft.CleanArchitecture.Repository.SqlServer.EfCoreFactory.csproj", "{0F8F180A-035B-480D-B45F-3DB950D5FDCE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.WebAPI", "RizSoft.CleanArchitecture.WebAPI\RizSoft.CleanArchitecture.WebAPI.csproj", "{530FDACC-4AD4-4B86-92B9-D2D5D4E6C98E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.BlazorServer", "RizSoft.CleanArchitecture.BlazorServer\RizSoft.CleanArchitecture.BlazorServer.csproj", "{8C8ABF3F-BEA4-466E-85EE-E77B40BC41B8}"
@@ -28,6 +26,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.BlazorWASM", "RizSoft.CleanArchitecture.BlazorWASM\RizSoft.CleanArchitecture.BlazorWASM.csproj", "{7A89D54D-9A4A-46FB-B337-AC159C268CE4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.WebUI", "RizSoft.CleanArchitecture.WebUI\RizSoft.CleanArchitecture.WebUI.csproj", "{00BA05A5-DC16-410F-9B1C-FFEB0E4E1C66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Services", "RizSoft.CleanArchitecture.Services\RizSoft.CleanArchitecture.Services.csproj", "{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Common", "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Common\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Common.csproj", "{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory", "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory.csproj", "{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +55,6 @@ Global
 		{C05F1789-B657-4EA0-A1A9-8581C9D0E93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C05F1789-B657-4EA0-A1A9-8581C9D0E93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C05F1789-B657-4EA0-A1A9-8581C9D0E93C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F8F180A-035B-480D-B45F-3DB950D5FDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F8F180A-035B-480D-B45F-3DB950D5FDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F8F180A-035B-480D-B45F-3DB950D5FDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F8F180A-035B-480D-B45F-3DB950D5FDCE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{530FDACC-4AD4-4B86-92B9-D2D5D4E6C98E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{530FDACC-4AD4-4B86-92B9-D2D5D4E6C98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{530FDACC-4AD4-4B86-92B9-D2D5D4E6C98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,6 +71,18 @@ Global
 		{00BA05A5-DC16-410F-9B1C-FFEB0E4E1C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00BA05A5-DC16-410F-9B1C-FFEB0E4E1C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00BA05A5-DC16-410F-9B1C-FFEB0E4E1C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,11 +92,13 @@ Global
 		{B5D6EB0F-B8D4-4600-BC3A-74313C1245AA} = {BA971AF9-8494-446F-8584-A969381D6268}
 		{FA7D6F29-8F19-43B4-ADFE-12345C311DFB} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
 		{C05F1789-B657-4EA0-A1A9-8581C9D0E93C} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
-		{0F8F180A-035B-480D-B45F-3DB950D5FDCE} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
 		{530FDACC-4AD4-4B86-92B9-D2D5D4E6C98E} = {E5333890-497E-4BC1-8349-791F365F4523}
 		{8C8ABF3F-BEA4-466E-85EE-E77B40BC41B8} = {E5333890-497E-4BC1-8349-791F365F4523}
 		{7A89D54D-9A4A-46FB-B337-AC159C268CE4} = {E5333890-497E-4BC1-8349-791F365F4523}
 		{00BA05A5-DC16-410F-9B1C-FFEB0E4E1C66} = {E5333890-497E-4BC1-8349-791F365F4523}
+		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
+		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
+		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05409619-CB6C-4221-8AC8-E3E9F371F765}
