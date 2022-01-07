@@ -16,4 +16,4 @@ Change of repository is made only changing the dependency in program.cs
 - Console App uses directly the implementations like in the old days... :-)
 
 See picture below
-![Alt text](Ausil/CleanArchitecture.jpg?raw=true "My Clean Architecture Schema")
+![Alt text](Ausil/CleanArchitecture.jpg?raw=true "Clean Architecture Schema")
