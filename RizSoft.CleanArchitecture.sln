@@ -33,9 +33,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory", "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory.csproj", "{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C2AA3D01-8E97-4F59-8BD6-A4D3F6B039E8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.ConsoleApp", "RizSoft.CleanArchitecture.ConsoleApp\RizSoft.CleanArchitecture.ConsoleApp.csproj", "{A50F0779-96E7-4783-9E56-677B342F6977}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{34172517-3B89-456A-B815-B22C75ACB74F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4EBD9CF2-6381-44E8-B25A-629D69F4367B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playground", "playground", "{B262868F-A798-4069-9548-0E073AD5ED59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76FDE803-84EC-48D1-9E42-7007071C38BB}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\Database Sql Northwind\create northwind sqlserver.sql = Solution Items\Database Sql Northwind\create northwind sqlserver.sql
+		Solution Items\Database Sqlite Northwind\northwind.db = Solution Items\Database Sqlite Northwind\northwind.db
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Domain.UnitTests", "RizSoft.CleanArchitecture.Domain.UnitTests\RizSoft.CleanArchitecture.Domain.UnitTests.csproj", "{F345370F-46E9-49D2-A3A5-2B1574564953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Infrastructure.IntegrationTests", "RizSoft.CleanArchitecture.Infrastructure.IntegrationTests\RizSoft.CleanArchitecture.Infrastructure.IntegrationTests.csproj", "{A6D4AE9E-9E27-44E2-B590-231E52B305FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Application.UnitTests", "RizSoft.CleanArchitecture.Application.UnitTests\RizSoft.CleanArchitecture.Application.UnitTests.csproj", "{91630FF1-8470-4DD2-A780-DD9A6272FCC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,11 +108,27 @@ Global
 		{A50F0779-96E7-4783-9E56-677B342F6977}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A50F0779-96E7-4783-9E56-677B342F6977}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A50F0779-96E7-4783-9E56-677B342F6977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F345370F-46E9-49D2-A3A5-2B1574564953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F345370F-46E9-49D2-A3A5-2B1574564953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F345370F-46E9-49D2-A3A5-2B1574564953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F345370F-46E9-49D2-A3A5-2B1574564953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6D4AE9E-9E27-44E2-B590-231E52B305FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D4AE9E-9E27-44E2-B590-231E52B305FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D4AE9E-9E27-44E2-B590-231E52B305FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D4AE9E-9E27-44E2-B590-231E52B305FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91630FF1-8470-4DD2-A780-DD9A6272FCC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91630FF1-8470-4DD2-A780-DD9A6272FCC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91630FF1-8470-4DD2-A780-DD9A6272FCC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91630FF1-8470-4DD2-A780-DD9A6272FCC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{A829A943-DFAC-48AB-B1B3-B7A85B680492} = {34172517-3B89-456A-B815-B22C75ACB74F}
+		{BA971AF9-8494-446F-8584-A969381D6268} = {34172517-3B89-456A-B815-B22C75ACB74F}
+		{3F371E10-F851-4E43-8C36-16DB9E3B1792} = {34172517-3B89-456A-B815-B22C75ACB74F}
+		{E5333890-497E-4BC1-8349-791F365F4523} = {34172517-3B89-456A-B815-B22C75ACB74F}
 		{A23286E2-EDB2-4191-8637-AA19B311FCE2} = {A829A943-DFAC-48AB-B1B3-B7A85B680492}
 		{B5D6EB0F-B8D4-4600-BC3A-74313C1245AA} = {BA971AF9-8494-446F-8584-A969381D6268}
 		{FA7D6F29-8F19-43B4-ADFE-12345C311DFB} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
@@ -107,7 +140,10 @@ Global
 		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0} = {BA971AF9-8494-446F-8584-A969381D6268}
 		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
 		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
-		{A50F0779-96E7-4783-9E56-677B342F6977} = {C2AA3D01-8E97-4F59-8BD6-A4D3F6B039E8}
+		{A50F0779-96E7-4783-9E56-677B342F6977} = {B262868F-A798-4069-9548-0E073AD5ED59}
+		{F345370F-46E9-49D2-A3A5-2B1574564953} = {4EBD9CF2-6381-44E8-B25A-629D69F4367B}
+		{A6D4AE9E-9E27-44E2-B590-231E52B305FE} = {4EBD9CF2-6381-44E8-B25A-629D69F4367B}
+		{91630FF1-8470-4DD2-A780-DD9A6272FCC9} = {4EBD9CF2-6381-44E8-B25A-629D69F4367B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05409619-CB6C-4221-8AC8-E3E9F371F765}
