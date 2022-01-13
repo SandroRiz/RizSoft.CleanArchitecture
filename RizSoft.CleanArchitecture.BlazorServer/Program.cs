@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RizSoft.CleanArchitecture.Application;
+using RizSoft.CleanArchitecture.Domain.Models;
 using RizSoft.CleanArchitecture.Repository.SqlServer.EfCore;
 using RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory;
 using RizSoft.CleanArchitecture.Services;
@@ -11,7 +12,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 var connectionString = builder.Configuration.GetConnectionString("Db");
-builder.Services.AddDbContextFactory<DataContext>(o => o.UseSqlServer(connectionString));
+builder.Services.AddPooledDbContextFactory<DataContext>(o => o.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();

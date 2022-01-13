@@ -7,6 +7,7 @@ namespace RizSoft.CleanArchitecture.Application.UnitTests
         [Fact]
         public void Test1()
         {
+            //
 
         }
     }
