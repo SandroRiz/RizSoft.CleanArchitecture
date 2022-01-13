@@ -12,6 +12,8 @@ public partial class Index
     protected override async Task OnInitializedAsync()
     {
         Employees = await EmployeeService.ListAsync();
+
+        await EmployeeService.GetEmployeeCardAsync(1);
     }
 
     protected async Task FilterEmployees()

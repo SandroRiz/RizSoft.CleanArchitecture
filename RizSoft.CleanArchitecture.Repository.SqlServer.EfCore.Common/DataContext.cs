@@ -10,13 +10,11 @@ namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore
 {
     public partial class DataContext : DbContext
     {
-        public DataContext()
-        {
-        }
-
+      
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
         public virtual DbSet<Category> Categories { get; set; }

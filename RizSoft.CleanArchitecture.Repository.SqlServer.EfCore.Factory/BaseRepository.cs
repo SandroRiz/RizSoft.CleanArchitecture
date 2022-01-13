@@ -3,80 +3,67 @@ using RizSoft.CleanArchitecture.Application;
 
 namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory;
 
-public class BaseRepository<T, Tkey> : IBaseRepository<T, Tkey>
+public class BaseRepository<T, TKey> : QueryBaseRepository<T>, IBaseRepository<T, TKey>
 where T : class
 {
-    protected IDbContextFactory<DataContext> CtxFactory { get; }
-
-
-    public BaseRepository(IDbContextFactory<DataContext> ctxFactory)
+    public BaseRepository(IDbContextFactory<DataContext> ctxFactory) : base(ctxFactory)
     {
-        this.CtxFactory = ctxFactory;
     }
     //public DbSet<T> Set => Context.Set<T>();
 
     public virtual async Task AddAsync(T entity)
     {
-        using (var ctx = CtxFactory.CreateDbContext())
-        {
-            var Set = ctx.Set<T>();
-            Set.Add(entity);
-            await ctx.SaveChangesAsync();
-        }
+        await using var ctx = await CtxFactory.CreateDbContextAsync();
+        var set = ctx.Set<T>();
+        set.Add(entity);
+        await ctx.SaveChangesAsync();
     }
 
     public virtual async Task DeleteAsync(T entity)
     {
-        using (var ctx = CtxFactory.CreateDbContext())
-        {
-            var Set = ctx.Set<T>();
-            ctx.Entry(entity).State = EntityState.Deleted;
-            await ctx.SaveChangesAsync();
-        }
+        await using var ctx = await CtxFactory.CreateDbContextAsync();
+        ctx.Entry(entity).State = EntityState.Deleted;
+        await ctx.SaveChangesAsync();
     }
 
-    public virtual async Task DeleteAsync(Tkey id)
+    public virtual async Task DeleteAsync(TKey id)
     {
-        using (var ctx = CtxFactory.CreateDbContext())
-        {
-            var Set = ctx.Set<T>();
+        await using var ctx = await CtxFactory.CreateDbContextAsync();
+        DbSet<T> set = ctx.Set<T>();
 
-            T entity = await Set.FindAsync(id);
+        T? entity = await set.FindAsync(id);
+        if (entity == null) throw new ArgumentException($"Cannot find id {id}");
 
-            ctx.Entry(entity).State = EntityState.Deleted;
-            await ctx.SaveChangesAsync();
-        }
+        ctx.Entry(entity).State = EntityState.Deleted;
+        await ctx.SaveChangesAsync();
     }
 
-    public virtual async Task<T> GetAsync(Tkey id)
+    public virtual async Task<T> GetAsync(TKey id)
     {
-        using (var ctx = CtxFactory.CreateDbContext())
-        {
-            var Set = ctx.Set<T>();
-            return await Set.FindAsync(id);
-        }
+        await using var ctx = await CtxFactory.CreateDbContextAsync();
+        var set = ctx.Set<T>();
+        if (set == null) throw new ArgumentException(nameof(set));
+
+        var entity = await set.FindAsync(id);
+        if (entity == null) throw new ArgumentException($"Cannot find id {id}");
+
+        return entity;
     }
 
     public virtual async Task<List<T>> ListAsync()
     {
-        using (var ctx = CtxFactory.CreateDbContext())
-        {
-            var Set = ctx.Set<T>();
-            return await Set.ToListAsync();
-        }
+        await using var ctx = await CtxFactory.CreateDbContextAsync();
+        var set = ctx.Set<T>();
+        return await set.ToListAsync();
     }
 
     public virtual async Task UpdateAsync(T entity)
     {
-        using (var ctx = CtxFactory.CreateDbContext())
-        {
-            var Set = ctx.Set<T>();
-            ctx.Entry(entity).State = EntityState.Modified;
+        await using var ctx = await CtxFactory.CreateDbContextAsync();
+        ctx.Entry(entity).State = EntityState.Modified;
 
-            await ctx.SaveChangesAsync();
-        }
+        await ctx.SaveChangesAsync();
     }
 
 
 }
-

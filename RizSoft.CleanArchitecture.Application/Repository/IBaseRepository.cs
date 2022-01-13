@@ -1,6 +1,6 @@
 ﻿namespace RizSoft.CleanArchitecture.Application;
 
-public interface IBaseRepository<T, in TKey>
+public interface IBaseRepository<T, in TKey> : IQueryBaseRepository<T>
 {
     Task<T> GetAsync(TKey id);
     Task<List<T>> ListAsync();
