@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using RizSoft.CleanArchitecture.Application;
 using RizSoft.CleanArchitecture.Domain.Models;
 using RizSoft.CleanArchitecture.Repository.SqlServer.EfCore;
-using RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory;
 using RizSoft.CleanArchitecture.Services;
 
 var builder = WebApplication.CreateBuilder(args);

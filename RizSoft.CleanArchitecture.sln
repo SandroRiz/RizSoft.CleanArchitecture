@@ -29,10 +29,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.Services", "RizSoft.CleanArchitecture.Services\RizSoft.CleanArchitecture.Services.csproj", "{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Common", "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Common\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Common.csproj", "{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory", "RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory.csproj", "{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.ConsoleApp", "RizSoft.CleanArchitecture.ConsoleApp\RizSoft.CleanArchitecture.ConsoleApp.csproj", "{A50F0779-96E7-4783-9E56-677B342F6977}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{34172517-3B89-456A-B815-B22C75ACB74F}"
@@ -48,11 +44,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Domain.UnitTests", "RizSoft.CleanArchitecture.Domain.UnitTests\RizSoft.CleanArchitecture.Domain.UnitTests.csproj", "{F345370F-46E9-49D2-A3A5-2B1574564953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.Domain.UnitTests", "RizSoft.CleanArchitecture.Domain.UnitTests\RizSoft.CleanArchitecture.Domain.UnitTests.csproj", "{F345370F-46E9-49D2-A3A5-2B1574564953}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Infrastructure.IntegrationTests", "RizSoft.CleanArchitecture.Infrastructure.IntegrationTests\RizSoft.CleanArchitecture.Infrastructure.IntegrationTests.csproj", "{A6D4AE9E-9E27-44E2-B590-231E52B305FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.Infrastructure.IntegrationTests", "RizSoft.CleanArchitecture.Infrastructure.IntegrationTests\RizSoft.CleanArchitecture.Infrastructure.IntegrationTests.csproj", "{A6D4AE9E-9E27-44E2-B590-231E52B305FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizSoft.CleanArchitecture.Application.UnitTests", "RizSoft.CleanArchitecture.Application.UnitTests\RizSoft.CleanArchitecture.Application.UnitTests.csproj", "{91630FF1-8470-4DD2-A780-DD9A6272FCC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizSoft.CleanArchitecture.Application.UnitTests", "RizSoft.CleanArchitecture.Application.UnitTests\RizSoft.CleanArchitecture.Application.UnitTests.csproj", "{91630FF1-8470-4DD2-A780-DD9A6272FCC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,14 +92,6 @@ Global
 		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A50F0779-96E7-4783-9E56-677B342F6977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A50F0779-96E7-4783-9E56-677B342F6977}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A50F0779-96E7-4783-9E56-677B342F6977}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -138,8 +126,6 @@ Global
 		{7A89D54D-9A4A-46FB-B337-AC159C268CE4} = {E5333890-497E-4BC1-8349-791F365F4523}
 		{00BA05A5-DC16-410F-9B1C-FFEB0E4E1C66} = {E5333890-497E-4BC1-8349-791F365F4523}
 		{C4E4F979-6CF1-49FF-81D2-1DF5FD10A4A0} = {BA971AF9-8494-446F-8584-A969381D6268}
-		{2223D6CC-4D9F-4DC1-B896-B3ABD67CF764} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
-		{FCAD6BE3-5E22-47C0-B48A-ED03690B2912} = {3F371E10-F851-4E43-8C36-16DB9E3B1792}
 		{A50F0779-96E7-4783-9E56-677B342F6977} = {B262868F-A798-4069-9548-0E073AD5ED59}
 		{F345370F-46E9-49D2-A3A5-2B1574564953} = {4EBD9CF2-6381-44E8-B25A-629D69F4367B}
 		{A6D4AE9E-9E27-44E2-B590-231E52B305FE} = {4EBD9CF2-6381-44E8-B25A-629D69F4367B}

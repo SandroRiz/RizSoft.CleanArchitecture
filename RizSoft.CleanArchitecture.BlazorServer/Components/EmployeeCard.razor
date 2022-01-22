@@ -1,0 +1,12 @@
+﻿@using RizSoft.CleanArchitecture.Domain.Models
+<div class="card" style="width: 18rem;">
+  <img src="/images/User_@(Employee.Gender).jpg" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">@Employee.FirstName @Employee.LastName</h5>
+    <h6 class="card-subtitle mb-2 text-muted">@Employee.Title</h6>
+    <p class="card-text">@Employee.Notes</p>
+    <a href="tel:@Employee.HomePhone" class="card-link">Call...</a>
+  </div>
+</div>
+
+

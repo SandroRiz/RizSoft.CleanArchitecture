@@ -1,16 +1,19 @@
 ﻿@page "/"
+@using RizSoft.CleanArchitecture.BlazorServer.Components
 
 <PageTitle>Index</PageTitle>
 
 
-<div class="text-center">
-    <h1 class="display-4">A sample of Clean Architecture</h1>
+
+<h1 class="display-4">A sample of Clean Architecture</h1>
 
 
-    <h2 class="my-3">Northwind's Employee List by Country</h2>
+<h2 class="my-3">Northwind's Employee List by Country</h2>
 
     @if (Employees != null)
-    {
+{
+
+    <div class="text-center">
         <table class="table">
             <tr>
                 <th>Id</th>
@@ -28,15 +31,25 @@
                 </tr>
             }
         </table>
-        
-            <input type="text" @bind-value="@Country" />
-            <button class="btn btn-primary" @onclick="FilterEmployees">Filter</button>
-    
-    }
-    else
-    {
-        <p>Loading...</p>
-    }
+    </div>
+    <input type="text" @bind-value="@Country" />
+    <button class="btn btn-primary" @onclick="FilterEmployees">Filter</button>
 
-</div>
+    <hr />
+    <h4>Simulates several components that make concurrent access to dbcontext to test IDbContextFactory</h4>
+    <div class="row">
+        @foreach (var emp in Employees)
+        {
+            <div class="col-md-3 m-3">
+                <EmployeeCard Employee="@emp"></EmployeeCard>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+
 

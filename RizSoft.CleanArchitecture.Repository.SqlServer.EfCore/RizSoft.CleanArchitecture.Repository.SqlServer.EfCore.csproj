@@ -7,9 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Without DbFactory\BaseRepository.cs" />
+    <Compile Remove="Without DbFactory\EmployeeRepository.cs" />
+    <Compile Remove="Without DbFactory\IBaseRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RizSoft.CleanArchitecture.Application\RizSoft.CleanArchitecture.Application.csproj" />
     <ProjectReference Include="..\RizSoft.CleanArchitecture.Domain\RizSoft.CleanArchitecture.Domain.csproj" />
-    <ProjectReference Include="..\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Common\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Without DbFactory\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
   </ItemGroup>
 
 </Project>

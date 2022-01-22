@@ -7,12 +7,19 @@ namespace RizSoft.CleanArchitecture.Repository.SQLite.EfCore;
 
 public class EmployeeRepository : BaseRepository<Employee, int>, IEmployeeRepository
 {
-    public EmployeeRepository(DataContext context) : base(context)
+    public class EmployeeRepository : BaseRepository<Employee, int>, IEmployeeRepository
     {
-    }
+        public EmployeeRepository(IDbContextFactory<DataContext> factory) : base(factory)
+        {
+        }
 
-    public async Task<List<Employee>> ListByCountryAsync(string country)
-    {
-        return await Context.Employees.Where(e => e.Country == country).ToListAsync();
+        public async Task<List<Employee>> ListByCountryAsync(string country)
+        {
+            using var ctx = CtxFactory.CreateDbContext();
+            return await ctx.Employees.Where(e => e.Country == country).ToListAsync();
+
+        }
+
+
     }
 }

@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using RizSoft.CleanArchitecture.Application;
 
-namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory;
+namespace RizSoft.CleanArchitecture.Repository.SqlServer.EfCore;
 
 public class QueryBaseRepository<T> : IQueryBaseRepository<T>
 where T : class

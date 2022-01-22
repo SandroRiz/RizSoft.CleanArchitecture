@@ -9,7 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RizSoft.CleanArchitecture.Application\RizSoft.CleanArchitecture.Application.csproj" />
     <ProjectReference Include="..\RizSoft.CleanArchitecture.Domain\RizSoft.CleanArchitecture.Domain.csproj" />
-    <ProjectReference Include="..\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.Factory.csproj" />
+    <ProjectReference Include="..\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore\RizSoft.CleanArchitecture.Repository.SqlServer.EfCore.csproj" />
     <ProjectReference Include="..\RizSoft.CleanArchitecture.Services\RizSoft.CleanArchitecture.Services.csproj" />
   </ItemGroup>
 
