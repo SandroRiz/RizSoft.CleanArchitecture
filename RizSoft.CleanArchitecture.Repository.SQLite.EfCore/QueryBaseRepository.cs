@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq.Expressions;
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using RizSoft.CleanArchitecture.Application;
 
@@ -84,7 +85,7 @@ internal class DisposableQueryable<T> :  IOrderedQueryable<T>, IAsyncEnumerable<
     }
 }
 
-internal class DisposableQueryProvider : IQueryProvider
+internal class DisposableQueryProvider : IQueryProvider, Microsoft.EntityFrameworkCore.Query.IAsyncQueryProvider
 {
     private readonly DataContext _context;
     private readonly IQueryProvider _innerQueryProvider;
@@ -127,6 +128,36 @@ internal class DisposableQueryProvider : IQueryProvider
         finally
         {
             _context.Dispose();
+        }
+    }
+
+    private static readonly MethodInfo WrapResultMethod =
+        new Func<DbContext, Task<object>, Task<object>>(WrapResult).Method.GetGenericMethodDefinition();
+
+    public TResult ExecuteAsync<TResult>(Expression expression, CancellationToken cancellationToken = new CancellationToken())
+    {
+        if (_innerQueryProvider is not Microsoft.EntityFrameworkCore.Query.IAsyncQueryProvider ae) throw new NotSupportedException();
+        var result = ae.ExecuteAsync<TResult>(expression, cancellationToken);
+
+        if (result is Task t)
+        {
+            var resultType = result.GetType().GetGenericArguments()[0];
+            var wrapResultMethod = WrapResultMethod.MakeGenericMethod(resultType);
+            return (TResult)wrapResultMethod.Invoke(null, new object[] { _context, t });
+        }
+
+        throw new NotSupportedException();
+    }
+
+    private static async Task<T> WrapResult<T>(DbContext context, Task<T> task)
+    {
+        try
+        {
+            return await task;
+        }
+        finally
+        {
+            await context.DisposeAsync();
         }
     }
 }
