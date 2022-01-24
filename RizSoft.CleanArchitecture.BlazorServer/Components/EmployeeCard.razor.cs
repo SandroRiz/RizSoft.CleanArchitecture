@@ -12,7 +12,8 @@ namespace RizSoft.CleanArchitecture.BlazorServer.Components
 
         [Parameter]
         public int EmployeeId { get; set; }
-        public Employee Employee { get; set; } = new Employee();
+        
+        protected Employee Employee { get; set; } = new Employee();
 
         [Inject] IEmployeeService EmployeeService { get; set; }
         protected override async Task OnParametersSetAsync()
